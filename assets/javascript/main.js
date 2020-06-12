@@ -14,7 +14,6 @@ const closeNav = () => {
     menuOpen = false;
 }
 
-
 menuBtn.addEventListener('click', () => {
     if (!menuOpen) {
         openNav();
