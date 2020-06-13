@@ -17,13 +17,10 @@ const closeNav = () => {
 menuBtn.addEventListener('click', () => {
     if (!menuOpen) {
         openNav();
-
+        
         window.addEventListener('keydown', (e) => {
-            if (e.keyCode === 27) {
-                closeNav();
-            }
+            if (e.keyCode === 27) closeNav();
         })
-
         menuList.addEventListener('click', () => {
             closeNav();
         })

@@ -5,12 +5,12 @@
 /* @import url("components/navbar.css"); */
 
 :root {
-    --dark: #121420;
+    --dark: #424C55;
     --yellow: #ffc600;
     --light-blue: #00d6d6;
-    /* --green: #5df2ae; */
-    /* --blue: #087E8B; */
-    --grey: #36393B;
+    --green: #5df2ae;
+    --blue: #087E8B;
+    --grey: #424C55;
     --light: #E8F7EE;
     --light-gray: #f4f4f4;
 }
@@ -19,9 +19,11 @@ html {
   box-sizing: border-box;
   font-family: "Teko", Tahoma, Sans-Serif;
   font-weight: normal;
-  color: #272727;
+  color: var(--dark);
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   font-size: 16px;
+  transition: all 1s;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -123,7 +125,7 @@ header .container > * {
     padding: 6px 20px 3px 20px;
     border: 3px solid var(--dark);
     transition: all 0.5s;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.3);
 }
 .btn svg {
     font-size: 20px;
@@ -133,8 +135,8 @@ header .container > * {
 }
 
 .btn:hover {
-    background-color: rgba(255, 198, 0, 0.6);
-    border-color: rgba(255, 198, 0, 0.6);;
+    background-color: rgba(255, 198, 0, 0.5);
+    border-color: rgba(255, 198, 0, 0.7);;
 }
 
 .btn:hover svg {
@@ -289,14 +291,14 @@ footer {
     padding: 30px 15px;
     top: -50px;
     left: calc(50% - (66px / 2)) ;
-    background-color: rgba(255, 198, 0, 0.6);
+    background-color: rgba(255, 198, 0, 0.5);
 }
 .btn-up svg {
     width: 30px;
     height: 30px;
 }
 .btn-up:hover {
-    background-color: rgba(255, 198, 0, 0.9);
+    background-color: rgba(255, 198, 0, 0.7);
 }
 .social-btns svg {
     width: 35px;
@@ -334,6 +336,13 @@ footer {
 }
 .logo-text {
     display: none;
+}
+h6 {
+    font-size: 2rem;
+    line-height: 1;
+}
+.logo-text p {
+    line-height: 1;
 }
 
 #menu-list {
