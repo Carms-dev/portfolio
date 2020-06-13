@@ -1,3 +1,5 @@
+// navigation
+
 const menuBtn = document.querySelector('.menu-btn');
 const menuList = document.querySelector('#menu-list');
 let menuOpen = false;
@@ -17,7 +19,7 @@ const closeNav = () => {
 menuBtn.addEventListener('click', () => {
     if (!menuOpen) {
         openNav();
-        
+
         window.addEventListener('keydown', (e) => {
             if (e.keyCode === 27) closeNav();
         })
@@ -28,3 +30,19 @@ menuBtn.addEventListener('click', () => {
         closeNav();
     }
 })
+
+// nav display
+const nav = document.querySelector('nav');
+const header = document.querySelector('header');
+
+let headerEnd = header.offsetTop + header.offsetHeight;
+
+function updateNav() {
+    if (window.scrollY >= headerEnd) {
+        nav.style.background = "rgba(0, 0, 0, 0.2)";
+    } else {
+        nav.style.background = "transparent";
+    }
+}
+
+window.addEventListener('scroll', updateNav);
