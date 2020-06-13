@@ -43,15 +43,51 @@ h6 {
     font-family: 'Teko', sans-serif;
     font-weight: normal;
     margin: 0;
+    font-size: 1.5rem;
 }
 p {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    font-size: 1rem;
+    line-height: 2;
 }
 a {
     text-decoration: none;
 }
 
+.justify-text {
+    text-align: justify;
+}
+
+section {
+    padding: 50px 0 20px 0;
+}
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.3) 55%, rgba(255, 198, 0, 0.7) 35%);
+    padding: 0 10px 0 10px;
+    line-height: 95%;
+}
+h2, h3 {
+    width: fit-content;
+    font-size: 3rem;
+    text-transform: lowercase;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 55%, rgba(255, 198, 0, 0.7) 35%);
+    line-height: 90%;
+    padding: 0 10px;
+    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+}
+h3 {
+    font-size: 2rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 55%, var(--light-blue) 35%);
+    margin: 30px auto;
+}
+h4 {
+    font-weight: 300;
+}
+
+/* Header */
 header {
     height: 100vh;
     background-image:
@@ -61,46 +97,34 @@ header {
     background-blend-mode: saturation;
     background-position: 70% 50%;
 }
-
 header .container {
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: flex-end;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
-
 header .container > * {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     width: fit-content;
 }
-h1 {
-    font-size: 3rem;
-    background: linear-gradient(180deg, rgba(255,255,255,0.3) 55%, rgba(255, 198, 0, 0.7) 35%);
-    padding: 0 10px 0 10px;
-    line-height: 95%;
-}
 
-header p {
+.tag-line {
     font-size: 1.5rem;
     background: rgba(255,255,255,0.3);
-    padding: 0 10px 0 10px;
-}
-
-section p {
-    font-size: 18px;
+    padding: 0 10px;
+    line-height: 1.5;
 }
 
 .btn {
     text-transform: uppercase;
     color: var(--dark);
-    font-size: 30px;
+    font-size: 1.5rem;
     padding: 6px 20px 3px 20px;
     border: 3px solid var(--dark);
     transition: all 0.5s;
     background: transparent;
 }
-
 .btn svg {
     font-size: 20px;
     transition: all 0.5s;
@@ -121,7 +145,6 @@ section p {
 }
 .btn-icon svg{
     margin-left: 0 !important;
-    /* width: fit-content; */
 }
 
 /* about */
@@ -131,23 +154,6 @@ section p {
     align-items: center;
 }
 
-h2, h3 {
-    width: fit-content;
-    font-size: 60px;
-    text-transform: lowercase;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 55%, rgba(255, 198, 0, 0.7) 35%);
-    line-height: 90%;
-    padding: 0 10px;
-    margin: 50px auto;
-}
-
-h3 {
-    font-size: 36px;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 55%, var(--light-blue) 35%);
-    margin: 30px auto;
-}
-
-
 .profile {
     display: flex;
     justify-content: space-between;
@@ -156,19 +162,12 @@ h3 {
     margin-bottom: 50px;
 }
 
-.profile p {
-    text-align: justify;
-    line-height: 200%;
-    
-}
-
 #resume {
     display: flex;
     align-items: center;
     height: fit-content;
     margin: 20px 0;
 }
-
 
 .sub-profile {
     display: flex;
@@ -179,7 +178,7 @@ h3 {
 }
 .sub-profile > * {
     flex: 1;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .items {
     display: flex;
@@ -193,7 +192,6 @@ h3 {
     justify-content: center;
     align-items: center;
 }
-
 .item div {
     width: 75px;
     height: 75px;
@@ -209,20 +207,20 @@ h3 {
 }
 .item p {
     padding: 8px 0;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 /* portfolio */
 .project {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .project > * {
     flex: 1;
 }
-
 .proj-img img {
     width: 100%;
     object-fit: cover;
@@ -249,26 +247,23 @@ h3 {
     align-items: center;
     max-width: 500px;
 }
+
 form {
-    margin: 50px auto 180px auto;
+    margin: 50px auto 150px auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 500px;
-    font-size: 24px;
-    font-weight: 300;
+    height: 400px;
+    font-size: 1.5rem;
 }
-
-input, textarea {
+input,
+textarea {
     border: none;
     border-bottom: 3px solid var(--dark);
-    font-size: 24px;
+    line-height: 2rem;
+}
 
-}
-input {
-    height: 40px;
-}
 input:focus, textarea:focus {
     outline: none !important;
 }
@@ -287,8 +282,8 @@ footer {
     font-size: 18px;
     justify-content: space-between;
     align-items: center;
-
 }
+
 .btn-up {
     position: absolute;
     padding: 30px 15px;
@@ -315,7 +310,7 @@ footer {
 /* nav */
 .menu {
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px;
     position: fixed;
     top: 0;
     display: flex;
@@ -363,7 +358,7 @@ footer {
 }
 #menu-list > * {
     width: fit-content;
-    font-size: 48px;
+    font-size: 2rem;
 }
 .menu-item a {
     color: var(--dark);
@@ -384,15 +379,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
 
 .menu-btn__burger {
-    width: 50px;
-    height: 5px;
+    width: 2rem;
+    height: 3px;
     background: var(--dark);
     border-radius: 5px;
     transition: all 0.5s ease-in-out;
@@ -402,17 +397,17 @@ footer {
 .menu-btn__burger::after {
     content: '';
     position: absolute;
-    width: 50px;
-    height: 5px;
+    width: 2rem;
+    height: 3px;
     background: var(--dark);
     border-radius: 5px;
     transition: all 0.5s ease-in-out;
 }
 .menu-btn__burger::before {
-    transform: translateY(-16px);
+    transform: translateY(-12px);
 }
 .menu-btn__burger::after {
-    transform: translateY(16px);
+    transform: translateY(12px);
 }
 
 .menu-btn.open-menu .menu-btn__burger {
@@ -432,18 +427,10 @@ footer {
     margin: 0 auto;
 }
 
-
-
 @media(min-width: 768px) {
       /* For a screen > 768px, this CSS will be read */
     .container {
         width: 740px;
-    }
-}
-
-@media(min-width: 992px) {
-    .container {
-        width: 900px;
     }
     .profile {
         flex-direction: row;
@@ -451,6 +438,13 @@ footer {
     .profile p {
         margin-right: 50px;
     }
+}
+
+@media(min-width: 992px) {
+    .container {
+        width: 900px;
+    }
+
     .sub-profile {
         flex-direction: row;
         align-items: flex-start;
