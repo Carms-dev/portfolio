@@ -46,12 +46,14 @@ h6 {
     font-weight: normal;
     margin: 0;
     font-size: 1.5rem;
+    color: var(--dark);
 }
 p {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     font-size: 1rem;
     line-height: 2;
+    color: var(--dark);
 }
 a {
     text-decoration: none;
@@ -86,6 +88,7 @@ h3 {
     margin: 30px auto;
 }
 h4 {
+    color: var(--light);
     font-weight: 300;
 }
 
@@ -223,11 +226,41 @@ header .container > * {
 .project > * {
     flex: 1;
 }
+.proj-img {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+}
 .proj-img img {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
     width: 100%;
     object-fit: cover;
     margin: 0 auto;
 }
+.img__overlay {
+    background: #ffc60032;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: 0.4s;
+    transform: translateY(100%);
+}
+.img__overlay a {
+    /* border-color: white; */
+    /* color: var(--dark); */
+    /* background: transparent; */
+    background: rgba(255, 255, 255, 0.7);
+}
+.proj-img:hover .img__overlay {
+    transform: translateY(0);
+}
+
+
 .proj-details {
     display: flex;
     flex-direction: column;
