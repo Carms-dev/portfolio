@@ -69,12 +69,9 @@ openBtn.addEventListener('click', () => {
     })
     
     window.addEventListener('keydown', (e) => {
-        console.log(e.keyCode);
         if (e.keyCode === 27) {
             pauseVideo();
             overlay.classList.remove('open-modal');
         }
     })
 })
-
-
