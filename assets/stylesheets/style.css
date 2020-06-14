@@ -12,7 +12,7 @@
     --blue: #087E8B;
     --grey: #424C55;
     --light: #E8F7EE;
-    --light-gray: #f4f4f4;
+    --light-gray: #FAFAFA;
 }
 
 html {
@@ -120,8 +120,9 @@ header .container > * {
     padding: 0 10px;
     line-height: 1.5;
 }
-
+button,
 .btn {
+    font-family: 'Teko', sans-serif;
     text-transform: uppercase;
     color: var(--dark);
     font-size: 1.5rem;
@@ -260,7 +261,6 @@ header .container > * {
     transform: translateY(0);
 }
 
-
 .proj-details {
     display: flex;
     flex-direction: column;
@@ -275,6 +275,32 @@ header .container > * {
     justify-content: space-evenly;
 }
     
+.overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+}
+
+.overlay.open-modal {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.overlay__inner {
+    background: white;
+    padding: 20px;
+}
+
+.overlay iframe {
+    width: 100%;
+}
+
 /* contact */
 #contact .container {
     display: flex;

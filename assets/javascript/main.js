@@ -46,3 +46,35 @@ function updateNav() {
 }
 
 window.addEventListener('scroll', updateNav);
+
+// open modal
+const overlay = document.querySelector('.overlay');
+const openBtn = document.querySelector('.btn-demo');
+
+openBtn.addEventListener('click', () => {
+    overlay.classList.add('open-modal')
+
+    const video = overlay.querySelector('iframe');
+    const pauseVideo = () => {
+        if (video) {
+            const iframeSrc = video.src;
+            video.src = iframeSrc;
+        }
+    }
+    
+    const closeBtn = overlay.querySelector('.close-modal');
+    closeBtn.addEventListener('click', () => {
+        pauseVideo();
+        overlay.classList.remove('open-modal');
+    })
+    
+    window.addEventListener('keydown', (e) => {
+        console.log(e.keyCode);
+        if (e.keyCode === 27) {
+            pauseVideo();
+            overlay.classList.remove('open-modal');
+        }
+    })
+})
+
+
