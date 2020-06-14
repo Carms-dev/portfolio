@@ -97,7 +97,7 @@ header {
     height: 100vh;
     background-image:
         /* linear-gradient(var(--dark), var(--dark)), */
-        url('../images/profile_pic.jpg');
+        url('../images/profile.jpg');
     background-size: cover;
     background-blend-mode: saturation;
     background-position: 70% 50%;
