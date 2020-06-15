@@ -385,14 +385,18 @@ footer {
     display: flex;
     align-items: center;
 }
-.logo svg {
+.logo img {
+    width: 50px;
+}
+/* .logo svg {
     color: var(--dark);
     width: 50px;
     height: 50px;
     margin-right: 20px;
-}
+} */
 .logo a {
     height: 50px;
+    margin-right: 20px;
 }
 .logo-text {
     display: none;
