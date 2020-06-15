@@ -316,7 +316,6 @@ form {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 400px;
     font-size: 1.5rem;
     color: var(--dark);
 }
@@ -324,7 +323,8 @@ input,
 textarea {
     border: none;
     border-bottom: 3px solid var(--dark);
-    line-height: 2rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
 }
 
 input:focus, textarea:focus {
