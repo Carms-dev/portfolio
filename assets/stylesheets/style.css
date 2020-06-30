@@ -551,6 +551,9 @@ h6 {
     .logo-text {
         display: block;
     }
+    .overlay__inner {
+        max-height: 600px;
+    }
 }
 
 @media(min-width: 1400px) {
@@ -559,8 +562,5 @@ h6 {
     }
     h1 {
         font-size: 4rem;
-    }
-    .overlay__inner {
-        height: 700px;
     }
 }
