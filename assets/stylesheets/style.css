@@ -120,6 +120,11 @@ header .container > * {
     padding: 0 10px;
     line-height: 1.5;
 }
+
+button:focus {
+    outline:0;
+}
+
 button,
 .btn {
     font-family: 'Teko', sans-serif;
@@ -315,6 +320,9 @@ button:hover,
     border: 0;
     color: var(--light-blue);
     place-content: center center;
+}
+.close-modal:hover {
+    background: var(--blue);
 }
 
 .overlay iframe {
