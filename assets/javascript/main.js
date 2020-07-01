@@ -1,5 +1,4 @@
 // navigation
-
 const menuBtn = document.querySelector('.menu-btn');
 const menuList = document.querySelector('#menu-list');
 let menuOpen = false;
