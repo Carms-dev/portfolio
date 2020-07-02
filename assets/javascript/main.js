@@ -47,30 +47,68 @@ function updateNav() {
 window.addEventListener('scroll', updateNav);
 
 // open modal
-const overlay = document.querySelector('.overlay');
-const openBtn = document.querySelector('.btn-demo');
+const modalBtns = Array.from(document.querySelectorAll('.btn-demo'));
+const overlays = Array.from(document.querySelectorAll('.overlay'));
 
-openBtn.addEventListener('click', () => {
-    overlay.classList.add('open-modal')
+console.log(modalBtns[1], overlays[1]);
 
-    const video = overlay.querySelector('iframe');
-    const pauseVideo = () => {
-        if (video) {
-            const iframeSrc = video.src;
-            video.src = iframeSrc;
-        }
-    }
+const openModal = (i) => {
+    console.log(i);
+    overlays[i].classList.add('open-modal');
     
-    const closeBtn = overlay.querySelector('.close-modal');
+    const closeBtn = overlays[i].querySelector('.close-modal');
     closeBtn.addEventListener('click', () => {
-        pauseVideo();
-        overlay.classList.remove('open-modal');
-    })
-    
-    window.addEventListener('keydown', (e) => {
-        if (e.keyCode === 27) {
-            pauseVideo();
-            overlay.classList.remove('open-modal');
+        if (i === 0) { 
+            const video = overlays[i].querySelector('iframe');
+            const pauseVideo = () => {
+                if (video) {
+                    const iframeSrc = video.src;
+                    video.src = iframeSrc;
+                }
+            }
+            pauseVideo()
+
+            window.addEventListener('keydown', (e) => {
+                if (e.keyCode === 27) {
+                    pauseVideo();
+                    overlays[i].classList.remove('open-modal');
+                }
+            })
         }
+        overlays[i].classList.remove('open-modal');
     })
+}
+
+modalBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        openModal(index);
+    });
 })
+
+// const overlay = document.querySelector('.overlay');
+// const openBtn = document.querySelector('.btn-demo');
+
+// openBtn.addEventListener('click', () => {
+//     overlay.classList.add('open-modal')
+
+//     const video = overlay.querySelector('iframe');
+//     const pauseVideo = () => {
+//         if (video) {
+//             const iframeSrc = video.src;
+//             video.src = iframeSrc;
+//         }
+//     }
+
+//     const closeBtn = overlay.querySelector('.close-modal');
+//     closeBtn.addEventListener('click', () => {
+//         pauseVideo();
+//         overlay.classList.remove('open-modal');
+//     })
+
+//     window.addEventListener('keydown', (e) => {
+//         if (e.keyCode === 27) {
+//             pauseVideo();
+//             overlay.classList.remove('open-modal');
+//         }
+//     })
+// })
