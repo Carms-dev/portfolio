@@ -50,10 +50,7 @@ window.addEventListener('scroll', updateNav);
 const modalBtns = Array.from(document.querySelectorAll('.btn-demo'));
 const overlays = Array.from(document.querySelectorAll('.overlay'));
 
-console.log(modalBtns[1], overlays[1]);
-
 const openModal = (i) => {
-    console.log(i);
     overlays[i].classList.add('open-modal');
     
     const closeBtn = overlays[i].querySelector('.close-modal');
