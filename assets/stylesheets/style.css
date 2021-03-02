@@ -195,6 +195,7 @@ button:hover,
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
 }
 .item {
     margin: 10px;
@@ -219,6 +220,9 @@ button:hover,
 .item p {
     padding: 8px 0;
     font-size: 0.8rem;
+    max-width: 75px;
+    text-align: center;
+    line-height: 1.3;
 }
 
 /* portfolio */
