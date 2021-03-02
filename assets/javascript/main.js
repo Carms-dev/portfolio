@@ -1,4 +1,4 @@
-// navigation
+// open & close menu
 const menuBtn = document.querySelector('.menu-btn');
 const menuList = document.querySelector('#menu-list');
 let menuOpen = false;
@@ -20,7 +20,7 @@ menuBtn.addEventListener('click', () => {
         openNav();
 
         window.addEventListener('keydown', (e) => {
-            if (e.keyCode === 27) closeNav();
+            if (e.key === "Escape") closeNav();
         })
         menuList.addEventListener('click', () => {
             closeNav();
@@ -30,10 +30,9 @@ menuBtn.addEventListener('click', () => {
     }
 })
 
-// nav display
+// nav style updates based on scrollY
 const nav = document.querySelector('nav');
 const header = document.querySelector('header');
-
 let headerEnd = header.offsetTop + header.offsetHeight;
 
 function updateNav() {
@@ -52,26 +51,30 @@ const overlays = Array.from(document.querySelectorAll('.overlay'));
 
 const openModal = (i) => {
     overlays[i].classList.add('open-modal');
+
+    // function to stop the video for when the modal is being closed. 
+    const stopVideo = () => {
+        const iframe = overlays[i].querySelector('iframe');
+        if (iframe) {
+            const iframeSrc = iframe.src;
+            iframe.src = iframeSrc;
+        }
+    };
+
+    // listen to escape key
+    window.addEventListener('keydown', (e) => {
+        console.log(e);
+        if (e.key === "Escape") {
+            // if there is a video, it will pasue the video, else it is an empty function
+            stopVideo();
+            overlays[i].classList.remove('open-modal');
+        }
+    })
     
+    // listen to click on closeBtn
     const closeBtn = overlays[i].querySelector('.close-modal');
     closeBtn.addEventListener('click', () => {
-        if (i === 0) { 
-            const video = overlays[i].querySelector('iframe');
-            const pauseVideo = () => {
-                if (video) {
-                    const iframeSrc = video.src;
-                    video.src = iframeSrc;
-                }
-            }
-            pauseVideo()
-
-            window.addEventListener('keydown', (e) => {
-                if (e.keyCode === 27) {
-                    pauseVideo();
-                    overlays[i].classList.remove('open-modal');
-                }
-            })
-        }
+        stopVideo();
         overlays[i].classList.remove('open-modal');
     })
 }
@@ -81,31 +84,3 @@ modalBtns.forEach((btn, index) => {
         openModal(index);
     });
 })
-
-// const overlay = document.querySelector('.overlay');
-// const openBtn = document.querySelector('.btn-demo');
-
-// openBtn.addEventListener('click', () => {
-//     overlay.classList.add('open-modal')
-
-//     const video = overlay.querySelector('iframe');
-//     const pauseVideo = () => {
-//         if (video) {
-//             const iframeSrc = video.src;
-//             video.src = iframeSrc;
-//         }
-//     }
-
-//     const closeBtn = overlay.querySelector('.close-modal');
-//     closeBtn.addEventListener('click', () => {
-//         pauseVideo();
-//         overlay.classList.remove('open-modal');
-//     })
-
-//     window.addEventListener('keydown', (e) => {
-//         if (e.keyCode === 27) {
-//             pauseVideo();
-//             overlay.classList.remove('open-modal');
-//         }
-//     })
-// })
