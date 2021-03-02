@@ -1,9 +1,3 @@
-/* Importing Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Teko:wght@300;400;500;600&display=swap');
-  
-/* Importing components */
-/* @import url("components/navbar.css"); */
-
 :root {
     --dark: #424C55;
     --yellow: #ffc600;
@@ -17,12 +11,12 @@
 
 html {
   box-sizing: border-box;
-  font-family: "Teko", Tahoma, Sans-Serif;
-  font-weight: normal;
+  font-family: "Teko", Sans-Serif;
+  font-weight: 400;
   color: var(--dark);
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
   font-size: 16px;
-  transition: all 1s;
+  transition: all 0.5s ease-in-out;
   scroll-behavior: smooth;
 }
 
@@ -42,8 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Teko', sans-serif;
-    font-weight: normal;
+    font-weight: 400;
     margin: 0;
     font-size: 1.5rem;
     color: var(--dark);
@@ -138,9 +131,8 @@ button,
 }
 .btn svg {
     font-size: 20px;
-    transition: all 0.5s;
+    transition: all 0.5s ease-in-out;
     margin-left: 10px;
-    /* transform: rotate(0deg)  */
 }
 button:hover, 
 .btn:hover {
@@ -262,9 +254,6 @@ button:hover,
     transform: translateY(100%);
 }
 .img__overlay a {
-    /* border-color: white; */
-    /* color: var(--dark); */
-    /* background: transparent; */
     background: rgba(255, 255, 255, 0.7);
 }
 .proj-img:hover .img__overlay {
@@ -421,12 +410,6 @@ footer {
 .logo img {
     width: 50px;
 }
-/* .logo svg {
-    color: var(--dark);
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-} */
 .logo a {
     height: 50px;
     margin-right: 20px;
@@ -466,17 +449,26 @@ h6 {
     width: fit-content;
     font-size: 2rem;
 }
+#menu-list .social-btns {
+    margin-top: 2rem;
+}
+#menu-list svg {
+    color: var(--dark);
+    transition: all 0.5s ease-in-out;
+}
+#menu-list svg:hover {
+    color: var(--light-blue);
+    opacity: 0.7;
+}
 .menu-item a {
     color: var(--dark);
+    transition: all 0.5s ease-in-out;
 }
 .menu-item a:hover {
     color: var(--dark);
     background: linear-gradient(180deg, rgba(255,255,255,0.0) 45%, rgba(0, 214, 214, 0.3) 45%);
     line-height: 30px;
     padding: 0 10px;
-}
-#menu-list .social-btns a:hover svg{
-    color: rgba(0, 214, 214, 0.3);
 }
 
 /* menu button */
